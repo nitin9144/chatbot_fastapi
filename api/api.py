@@ -11,7 +11,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://www.your-portfolio-domain.com",
+        "https://my-portfolio-psi-six-76.vercel.app/",
         "http://localhost:5173",
     ],
     allow_methods=["POST", "OPTIONS"],
