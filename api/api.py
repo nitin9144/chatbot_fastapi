@@ -4,8 +4,7 @@ from fastapi import FastAPI, HTTPException
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 from pydantic import BaseModel, Field
 
-from ..chatbot_backend import ChatState, chatbot
-
+from chatbot_backend import ChatState, chatbot
 app = FastAPI()
 
 
