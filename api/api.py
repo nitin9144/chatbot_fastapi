@@ -1,11 +1,23 @@
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 from pydantic import BaseModel, Field
 
 from chatbot_backend import ChatState, chatbot
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://your-portfolio-domain.com",
+        "https://www.your-portfolio-domain.com",
+        "http://localhost:5173",
+    ],
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
+)
 
 
 class ChatMessage(BaseModel):
